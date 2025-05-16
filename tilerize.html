@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tilerizers &mdash; GeoDataset  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=0ab8baea" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AOI (Area Of Interest)" href="aoi.html" />
+    <link rel="prev" title="Documentation" href="documentation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GeoDataset
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tilerizers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#geodataset.tilerize.RasterTilerizer"><code class="docutils literal notranslate"><span class="pre">RasterTilerizer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#geodataset.tilerize.RasterTilerizer.generate_tiles"><code class="docutils literal notranslate"><span class="pre">RasterTilerizer.generate_tiles()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#geodataset.tilerize.RasterTilerizerGDF"><code class="docutils literal notranslate"><span class="pre">RasterTilerizerGDF</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#geodataset.tilerize.RasterTilerizerGDF.generate_tiles_gdf"><code class="docutils literal notranslate"><span class="pre">RasterTilerizerGDF.generate_tiles_gdf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#geodataset.tilerize.LabeledRasterTilerizer"><code class="docutils literal notranslate"><span class="pre">LabeledRasterTilerizer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#geodataset.tilerize.LabeledRasterTilerizer.generate_additional_coco_dataset"><code class="docutils literal notranslate"><span class="pre">LabeledRasterTilerizer.generate_additional_coco_dataset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geodataset.tilerize.LabeledRasterTilerizer.generate_coco_dataset"><code class="docutils literal notranslate"><span class="pre">LabeledRasterTilerizer.generate_coco_dataset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aoi.html">AOI (Area Of Interest)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataset.html">Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aggregator.html">Aggregator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geodata.html">Geodata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="labels.html">Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Utils</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GeoDataset</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="documentation.html">Documentation</a></li>
+      <li class="breadcrumb-item active">Tilerizers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tilerize.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tilerizers">
+<h1>Tilerizers<a class="headerlink" href="#tilerizers" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="geodataset.tilerize.RasterTilerizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">geodataset.tilerize.</span></span><span class="sig-name descname"><span class="pre">RasterTilerizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raster_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_overlap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_aoi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aois_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_black_white_alpha_tiles_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./tmp'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geodataset/tilerize/raster_tilerizer.html#RasterTilerizer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geodataset.tilerize.RasterTilerizer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDiskRasterTilerizer</span></code></p>
+<p>A standard tilerizer for Raster data without annotations or labels. The generate_tiles method generates and then saves the tiles to the disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raster_path</strong> (<em>str</em><em> or </em><em>pathlib.Path</em>) – Path to the raster (.tif, .png…).</p></li>
+<li><p><strong>output_path</strong> (<em>str</em><em> or </em><em>pathlib.Path</em>) – Path to parent folder where to save the image tiles.</p></li>
+<li><p><strong>tile_size</strong> (<em>int</em>) – The wanted size of the tiles (tile_size, tile_size).</p></li>
+<li><p><strong>tile_overlap</strong> (<em>float</em>) – The overlap between the tiles (should be 0 &lt;= overlap &lt; 1).</p></li>
+<li><p><strong>global_aoi</strong> (<em>str</em><em> or </em><em>pathlib.Path</em><em> or </em><em>geopandas.GeoDataFrame</em><em>, </em><em>optional</em>) – <p>Path to the global AOI file, or directly a GeoDataFrame.
+If provided, only the tiles intersecting this AOI will be kept, even if some tiles are inside one of the aois
+in aois_config (if AOIFromPackageConfig).</p>
+<p>This parameter can be really useful to create a kfold dataset in association with an AOIGeneratorConfig config like this:</p>
+<dl>
+<dt>aois_config = AOIGeneratorConfig(aois={</dt><dd><blockquote>
+<div><p>‘zone1’: {‘percentage’: 0.2, ‘position’: 1, ‘actual_name’: f’train{kfold_id}’},
+‘zone2’: {‘percentage’: 0.2, ‘position’: 2, ‘actual_name’: f’train{kfold_id}’},
+‘zone3’: {‘percentage’: 0.2, ‘position’: 3, ‘actual_name’: f’valid{kfold_id}’},
+‘zone4’: {‘percentage’: 0.2, ‘position’: 4, ‘actual_name’: f’train{kfold_id}’},
+‘zone5’: {‘percentage’: 0.2, ‘position’: 5, ‘actual_name’: f’train{kfold_id}’}</p>
+</div></blockquote>
+<p>},
+aoi_type=’band’</p>
+</dd>
+</dl>
+<p>)</p>
+</p></li>
+<li><p><strong>aois_config</strong> (<a class="reference internal" href="aoi.html#geodataset.aoi.AOIGeneratorConfig" title="geodataset.aoi.AOIGeneratorConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">AOIGeneratorConfig</span></code></a> or <a class="reference internal" href="aoi.html#geodataset.aoi.AOIFromPackageConfig" title="geodataset.aoi.AOIFromPackageConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">AOIFromPackageConfig</span></code></a> or None) – An instance of AOIConfig to use, or None if all tiles should be kept in an ‘all’ AOI.</p></li>
+<li><p><strong>ground_resolution</strong> (<em>float</em>) – The ground resolution in meter per pixel desired when loading the raster.
+Only one of ground_resolution and scale_factor can be set at the same time.</p></li>
+<li><p><strong>scale_factor</strong> (<em>float</em>) – Scale factor for rescaling the data (change pixel resolution).
+Only one of ground_resolution and scale_factor can be set at the same time.</p></li>
+<li><p><strong>output_name_suffix</strong> (<em>str</em>) – Suffix to add to the output file names.</p></li>
+<li><p><strong>ignore_black_white_alpha_tiles_threshold</strong> (<em>float</em>) – Threshold ratio of black, white or transparent pixels in a tile to skip it. Default is 0.8.</p></li>
+<li><p><strong>temp_dir</strong> (<em>str</em><em> or </em><em>pathlib.Path</em>) – Temporary directory to store the resampled Raster, if it is too big to fit in memory.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="geodataset.tilerize.RasterTilerizer.generate_tiles">
+<span class="sig-name descname"><span class="pre">generate_tiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geodataset/tilerize/raster_tilerizer.html#RasterTilerizer.generate_tiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geodataset.tilerize.RasterTilerizer.generate_tiles" title="Link to this definition"></a></dt>
+<dd><p>Generate the tiles and save them to the disk.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="geodataset.tilerize.RasterTilerizerGDF">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">geodataset.tilerize.</span></span><span class="sig-name descname"><span class="pre">RasterTilerizerGDF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raster_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_overlap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aois_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_black_white_alpha_tiles_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./tmp'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geodataset/tilerize/raster_tilerizer.html#RasterTilerizerGDF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geodataset.tilerize.RasterTilerizerGDF" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseRasterTilerizer</span></code></p>
+<p>A standard tilerizer for Raster data without annotations or labels. The generate_tiles_gdf method returns tiles extents as a GeoDataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raster_path</strong> (<em>str</em><em> or </em><em>pathlib.Path</em>) – Path to the raster (.tif, .png…).</p></li>
+<li><p><strong>tile_size</strong> (<em>int</em>) – The size of the tiles in pixels (tile_size, tile_size).</p></li>
+<li><p><strong>tile_overlap</strong> (<em>float</em>) – The overlap between the tiles (0 &lt;= overlap &lt; 1).</p></li>
+<li><p><strong>aois_config</strong> (<a class="reference internal" href="aoi.html#geodataset.aoi.AOIGeneratorConfig" title="geodataset.aoi.AOIGeneratorConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">AOIGeneratorConfig</span></code></a> or <a class="reference internal" href="aoi.html#geodataset.aoi.AOIFromPackageConfig" title="geodataset.aoi.AOIFromPackageConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">AOIFromPackageConfig</span></code></a> or None) – An instance of AOIConfig to use, or None if all tiles should be kept in an ‘all’ AOI.</p></li>
+<li><p><strong>ground_resolution</strong> (<em>float</em><em>, </em><em>optional</em>) – The ground resolution in meter per pixel desired when loading the raster.
+Only one of ground_resolution and scale_factor can be set at the same time.</p></li>
+<li><p><strong>scale_factor</strong> (<em>float</em><em>, </em><em>optional</em>) – Scale factor for rescaling the data (change pixel resolution).
+Only one of ground_resolution and scale_factor can be set at the same time.</p></li>
+<li><p><strong>output_name_suffix</strong> (<em>str</em><em>, </em><em>optional</em>) – Suffix to add to the output file names.</p></li>
+<li><p><strong>ignore_black_white_alpha_tiles_threshold</strong> (<em>float</em><em>, </em><em>optional</em>) – Threshold ratio of black, white or transparent pixels in a tile to skip it. Default is 0.8.</p></li>
+<li><p><strong>temp_dir</strong> (<em>str</em><em> or </em><em>pathlib.Path</em>) – Temporary directory to store the resampled Raster, if it is too big to fit in memory.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="geodataset.tilerize.RasterTilerizerGDF.generate_tiles_gdf">
+<span class="sig-name descname"><span class="pre">generate_tiles_gdf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geodataset/tilerize/raster_tilerizer.html#RasterTilerizerGDF.generate_tiles_gdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geodataset.tilerize.RasterTilerizerGDF.generate_tiles_gdf" title="Link to this definition"></a></dt>
+<dd><p>Generate the tiles and return them as a GeoDataFrame.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="geodataset.tilerize.LabeledRasterTilerizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">geodataset.tilerize.</span></span><span class="sig-name descname"><span class="pre">LabeledRasterTilerizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raster_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_overlap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_gdf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_aoi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aois_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_black_white_alpha_tiles_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_rle_for_labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_intersection_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_tiles_without_labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geopackage_layer_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">main_label_category_column_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_labels_attributes_column_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coco_n_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coco_categories_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./tmp'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geodataset/tilerize/labeled_raster_tilerizer.html#LabeledRasterTilerizer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geodataset.tilerize.LabeledRasterTilerizer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseDiskRasterTilerizer</span></code></p>
+<p>This class is used to create image tiles from a raster and their associated labels from a .geojson, .gpkg or .csv file.
+COCO json files are generated for each AOI (or for the ‘all’ AOI).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raster_path</strong> (<em>str</em><em> or </em><em>pathlib.Path</em>) – Path to the raster (.tif, .png…).</p></li>
+<li><p><strong>labels_path</strong> (<em>str</em><em> or </em><em>pathlib.Path</em><em> or </em><em>None</em>) – Path to the labels. Supported formats are: .gpkg, .geojson, .shp, .xml, .csv.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em><em> or </em><em>pathlib.Path</em>) – Path to parent folder where to save the image tiles and associated labels.</p></li>
+<li><p><strong>tile_size</strong> (<em>int</em>) – The size of the tiles in pixels (tile_size, tile_size).</p></li>
+<li><p><strong>tile_overlap</strong> (<em>float</em>) – The overlap between the tiles (0 &lt;= overlap &lt; 1).</p></li>
+<li><p><strong>labels_gdf</strong> (<em>geopandas.GeoDataFrame</em><em>, </em><em>optional</em>) – A GeoDataFrame containing the labels. If provided, labels_path must be None.</p></li>
+<li><p><strong>global_aoi</strong> (<em>str</em><em> or </em><em>pathlib.Path</em><em> or </em><em>geopandas.GeoDataFrame</em><em>, </em><em>optional</em>) – <p>Path to the global AOI file, or directly a GeoDataFrame.
+If provided, only the tiles intersecting this AOI will be kept, even if some tiles are inside one of the aois
+in aois_config (if AOIFromPackageConfig).</p>
+<p>This parameter can be really useful to create a kfold dataset in association with an AOIGeneratorConfig config like this:</p>
+<dl>
+<dt>aois_config = AOIGeneratorConfig(aois={</dt><dd><blockquote>
+<div><p>‘zone1’: {‘percentage’: 0.2, ‘position’: 1, ‘actual_name’: f’train{kfold_id}’},
+‘zone2’: {‘percentage’: 0.2, ‘position’: 2, ‘actual_name’: f’train{kfold_id}’},
+‘zone3’: {‘percentage’: 0.2, ‘position’: 3, ‘actual_name’: f’valid{kfold_id}’},
+‘zone4’: {‘percentage’: 0.2, ‘position’: 4, ‘actual_name’: f’train{kfold_id}’},
+‘zone5’: {‘percentage’: 0.2, ‘position’: 5, ‘actual_name’: f’train{kfold_id}’}</p>
+</div></blockquote>
+<p>},
+aoi_type=’band’</p>
+</dd>
+</dl>
+<p>)</p>
+</p></li>
+<li><p><strong>aois_config</strong> (<a class="reference internal" href="aoi.html#geodataset.aoi.AOIGeneratorConfig" title="geodataset.aoi.AOIGeneratorConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">AOIGeneratorConfig</span></code></a> or <a class="reference internal" href="aoi.html#geodataset.aoi.AOIFromPackageConfig" title="geodataset.aoi.AOIFromPackageConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">AOIFromPackageConfig</span></code></a> or None) – An instance of AOIConfig to use, or None if all tiles should be kept in an ‘all’ AOI.</p></li>
+<li><p><strong>ground_resolution</strong> (<em>float</em><em>, </em><em>optional</em>) – The ground resolution in meter per pixel desired when loading the raster.
+Only one of ground_resolution and scale_factor can be set at the same time.</p></li>
+<li><p><strong>scale_factor</strong> (<em>float</em><em>, </em><em>optional</em>) – Scale factor for rescaling the data (change pixel resolution).
+Only one of ground_resolution and scale_factor can be set at the same time.</p></li>
+<li><p><strong>output_name_suffix</strong> (<em>str</em><em>, </em><em>optional</em>) – Suffix to add to the output file names.</p></li>
+<li><p><strong>ignore_black_white_alpha_tiles_threshold</strong> (<em>float</em><em>, </em><em>optional</em>) – Threshold ratio of black, white or transparent pixels in a tile to skip it. Default is 0.8.</p></li>
+<li><p><strong>use_rle_for_labels</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to use RLE encoding for the labels. If False, the labels will be saved as polygons.</p></li>
+<li><p><strong>min_intersection_ratio</strong> (<em>float</em><em>, </em><em>optional</em>) – When finding the associated polygon labels to a tile, this ratio will specify the minimal required intersection
+ratio (intersecting_polygon_area / polygon_area) between a candidate polygon and the tile in order to keep this
+polygon as a label for that tile.</p></li>
+<li><p><strong>ignore_tiles_without_labels</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to ignore (skip) tiles that don’t have any associated labels.</p></li>
+<li><p><strong>geopackage_layer_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the layer in the geopackage file to use as labels. Only used if the labels_path is a .gpkg, .geojson
+or .shp file. Only useful when the labels geopackage file contains multiple layers.</p></li>
+<li><p><strong>main_label_category_column_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the column in the labels file that contains the main category of the labels.</p></li>
+<li><p><strong>other_labels_attributes_column_names</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – The names of the columns in the labels file that contains other attributes of the labels, which should be kept
+as a dictionary in the COCO annotations data.</p></li>
+<li><p><strong>coco_n_workers</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of workers to use when generating the COCO dataset.
+Useful when use_rle_for_labels=True as it is quite slow.</p></li>
+<li><p><strong>coco_categories_list</strong> (<em>list</em><em> of </em><em>dict</em><em>, </em><em>optional</em>) – <p>A list of category dictionaries in COCO format.</p>
+<p>If provided, category ids for the annotations in the final COCO file
+will be determined by matching the category name (defined by ‘main_label_category_column_name’ parameter) of
+each polygon with the categories names in coco_categories_list.</p>
+<p>If a polygon has a category that is not in this list, its category_id will be set to None in its COCO annotation.</p>
+<p>If ‘main_label_category_column_name’ is not provided, but ‘coco_categories_list’ is a single
+coco category dictionary, then it will be used for all annotations automatically.</p>
+<p>If ‘coco_categories_list’ is None, the categories ids will be automatically generated from the
+unique categories found in the ‘main_label_category_column_name’ column.</p>
+<br><p>To assign a category_id to a polygon, the code will check the ‘name’ and ‘other_names’ fields of the categories.</p>
+<br><p><strong>IMPORTANT</strong>: It is strongly advised to provide this list if you want to have consistent category ids across
+multiple COCO datasets.</p>
+<br><p>Exemple of 2 categories, one being the parent of the other:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Pinaceae&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;other_names&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">&quot;supercategory&quot;</span><span class="p">:</span> <span class="n">null</span>
+<span class="p">},</span>
+<span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Picea&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;other_names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;PIGL&quot;</span><span class="p">,</span> <span class="s2">&quot;PIMA&quot;</span><span class="p">,</span> <span class="s2">&quot;PIRU&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;supercategory&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>temp_dir</strong> (<em>str</em><em> or </em><em>pathlib.Path</em>) – Temporary directory to store the resampled Raster, if it is too big to fit in memory.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="geodataset.tilerize.LabeledRasterTilerizer.generate_additional_coco_dataset">
+<span class="sig-name descname"><span class="pre">generate_additional_coco_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels_gdf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aoi_name_mapping</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geopackage_layer_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">main_label_category_column_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_labels_attributes_column_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/geodataset/tilerize/labeled_raster_tilerizer.html#LabeledRasterTilerizer.generate_additional_coco_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geodataset.tilerize.LabeledRasterTilerizer.generate_additional_coco_dataset" title="Link to this definition"></a></dt>
+<dd><p>Useful when you want to create a second dataset from another set of labels or predictions,
+while using the exact same tiles as before, without having to generate+save them another time.
+A mapping from original aoi names to new aoi names must be provided to avoid overwriting previous COCO datasets.
+Example: {‘groundtruth’: ‘infer’} could be used if you want to first generate a ground truth COCO dataset
+and associated tiles using the generate_coco_dataset method, and then generate inference COCO for the same
+tiles with this generate_additional_coco_dataset method, in order to run some evaluation script afterward.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geodataset.tilerize.LabeledRasterTilerizer.generate_coco_dataset">
+<span class="sig-name descname"><span class="pre">generate_coco_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/geodataset/tilerize/labeled_raster_tilerizer.html#LabeledRasterTilerizer.generate_coco_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#geodataset.tilerize.LabeledRasterTilerizer.generate_coco_dataset" title="Link to this definition"></a></dt>
+<dd><p>Generate the tiles and the COCO dataset(s) for each AOI (or for the ‘all’ AOI) and save everything to the disk.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="documentation.html" class="btn btn-neutral float-left" title="Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="aoi.html" class="btn btn-neutral float-right" title="AOI (Area Of Interest)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Anonymised.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
